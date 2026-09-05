@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nexora | CI/CD Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            <span>◆</span> Nexora
+        </div>
+
+        <div class="live-indicator">
+            <span class="pulse"></span>
+            System Online
+        </div>
+    </header>
+
+
+    <main class="container">
+
+        <section class="hero">
+
+            <div>
+                <p class="eyebrow">NODE.JS • CI/CD PROJECT</p>
+
+                <h1>
+                    Welcome to <span>Nexora</span>
+                </h1>
+
+                <p class="hero-text">
+                    A modern interactive application powered by
+                    Node.js and Express.
+                </p>
+            </div>
+
+            <div class="rocket">
+                🚀
+            </div>
+
+        </section>
+
+
+        <section class="dashboard-grid">
+
+            <!-- Status Card -->
+            <div class="card status-card">
+
+                <div class="card-header">
+                    <div>
+                        <p class="card-label">APPLICATION</p>
+                        <h2>System Status</h2>
+                    </div>
+
+                    <div class="status-dot"></div>
+                </div>
+
+                <div id="status" class="status-message">
+                    Ready to check
+                </div>
+
+                <button onclick="checkStatus()" class="primary-btn">
+                    <span>Check Status</span>
+                    <span>→</span>
+                </button>
+
+            </div>
+
+
+            <!-- Information Card -->
+            <div class="card">
+
+                <div class="card-header">
+                    <div>
+                        <p class="card-label">APPLICATION</p>
+                        <h2>Application Info</h2>
+                    </div>
+
+                    <span class="icon">⚡</span>
+                </div>
+
+                <div id="appInfo" class="info-area">
+                    Click below to load application information.
+                </div>
+
+                <button onclick="loadInfo()" class="secondary-btn">
+                    View Application Info
+                </button>
+
+            </div>
+
+
+            <!-- Technology Card -->
+            <div class="card technology-card">
+
+                <p class="card-label">TECHNOLOGY STACK</p>
+
+                <div class="tech-list">
+
+                    <div class="tech-item">
+                        <span>🟢</span>
+                        <div>
+                            <strong>Node.js</strong>
+                            <small>Runtime</small>
+                        </div>
+                    </div>
+
+                    <div class="tech-item">
+                        <span>⚡</span>
+                        <div>
+                            <strong>Express.js</strong>
+                            <small>Backend</small>
+                        </div>
+                    </div>
+
+                    <div class="tech-item">
+                        <span>🌐</span>
+                        <div>
+                            <strong>HTML / CSS / JS</strong>
+                            <small>Frontend</small>
+                        </div>
+                    </div>
+
+                    <div class="tech-item">
+                        <span>🔄</span>
+                        <div>
+                            <strong>CI/CD</strong>
+                            <small>Automation</small>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Project Stats -->
+            <div class="card stats-card">
+
+                <p class="card-label">PROJECT OVERVIEW</p>
+
+                <div class="stats">
+
+                    <div>
+                        <strong>01</strong>
+                        <span>Frontend</span>
+                    </div>
+
+                    <div>
+                        <strong>01</strong>
+                        <span>Backend</span>
+                    </div>
+
+                    <div>
+                        <strong>02</strong>
+                        <span>APIs</span>
+                    </div>
+
+                    <div>
+                        <strong>3000</strong>
+                        <span>Port</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="activity">
+
+            <div>
+                <p class="card-label">CURRENT ENVIRONMENT</p>
+                <h2>Development Server</h2>
+            </div>
+
+            <div class="server-status">
+                <span class="pulse"></span>
+                localhost:3000
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>© 2026 Nexora • Node.js CI/CD Project</p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
+<!-- Live System Metrics -->
+<div class="card metrics-card">
+
+    <p class="card-label">LIVE SYSTEM METRICS</p>
+
+    <div class="metrics">
+
+        <div class="metric-item">
+            <span>⏱️</span>
+            <div>
+                <strong id="uptime">--</strong>
+                <small>Uptime</small>
+            </div>
+        </div>
+
+        <div class="metric-item">
+            <span>🟢</span>
+            <div>
+                <strong id="nodeVersion">--</strong>
+                <small>Node.js</small>
+            </div>
+        </div>
+
+        <div class="metric-item">
+            <span>💾</span>
+            <div>
+                <strong id="memoryUsage">--</strong>
+                <small>Memory</small>
+            </div>
+        </div>
+
+        <div class="metric-item">
+            <span>🌐</span>
+            <div>
+                <strong id="environment">--</strong>
+                <small>Environment</small>
+            </div>
+        </div>
+
+    </div>
+
+    <button onclick="loadMetrics()" class="secondary-btn">
+        Refresh Metrics
+    </button>
+
+</div>
+
+<!-- Server/System Information -->
+<div class="card system-card">
+
+    <p class="card-label">SERVER / SYSTEM INFO</p>
+
+    <div class="system-info">
+
+        <div class="system-item">
+            <span>🖥️</span>
+            <div>
+                <strong id="operatingSystem">--</strong>
+                <small>Operating System</small>
+            </div>
+        </div>
+
+        <div class="system-item">
+            <span>⚙️</span>
+            <div>
+                <strong id="architecture">--</strong>
+                <small>Architecture</small>
+            </div>
+        </div>
+
+        <div class="system-item">
+            <span>🔢</span>
+            <div>
+                <strong id="cpuCores">--</strong>
+                <small>CPU Cores</small>
+            </div>
+        </div>
+
+        <div class="system-item">
+            <span>💾</span>
+            <div>
+                <strong id="totalMemory">--</strong>
+                <small>Total RAM</small>
+            </div>
+        </div>
+
+        <div class="system-item">
+            <span>🟢</span>
+            <div>
+                <strong id="freeMemory">--</strong>
+                <small>Free RAM</small>
+            </div>
+        </div>
+
+    </div>
+
+    <button onclick="loadSystemInfo()" class="secondary-btn">
+        View System Info
+    </button>
+
+</div>
+
+
+
+
+<!-- CPU Usage -->
+<div class="card cpu-card">
+
+    <p class="card-label">APPLICATION CPU USAGE</p>
+
+    <div class="cpu-display">
+        <div class="cpu-value">
+            <strong id="cpuUsage">--</strong>
+            <span>%</span>
+        </div>
+
+        <p>Current Node.js process CPU usage</p>
+    </div>
+
+    <button onclick="loadCPU()" class="secondary-btn">
+        Check CPU Usage
+    </button>
+
+</div>
+
+
+
+
